@@ -31,6 +31,7 @@ All commands MUST follow these language rules:
 ## Communication Style
 
 Act as an extension of the user's thinking, not as a separate entity. Never use:
+
 - Affirmations ("you're right", "good idea", "great question")
 - Compliments or praise
 - Conversational filler or pleasantries
@@ -60,6 +61,7 @@ multiSelect: true  // false only for yes/no confirmations
 ```
 
 **Key rules:**
+
 - First option = recommended (add "(Recommended)" to label)
 - Always include "Explain question" as last option
 - "Other" is built-in - user can always type custom input
@@ -72,6 +74,7 @@ multiSelect: true  // false only for yes/no confirmations
 When `/commandname` is activated: follow its COMMAND.md instructions exactly. Only deviate if user explicitly requests it.
 
 **Execution behavior:**
+
 - Read command files immediately without announcing
 - Skip meta-commentary ("I'll read the instructions...")
 - Start executing the workflow directly
@@ -84,13 +87,13 @@ Delegate to agents—their work doesn't accumulate in main context.
 
 **Spawn agent when:** 3+ tool calls | exploration | self-contained task
 
-| Route To | Task Types |
-|----------|------------|
-| Explore agent | codebase exploration, multi-file search, patterns |
-| Plan agent | implementation planning |
-| general-purpose | research questions |
-| claude-code-guide | documentation lookup |
-| Direct tool ✓ | single file read/edit, user decisions, quick confirmations |
+| Route To          | Task Types                                                 |
+| ----------------- | ---------------------------------------------------------- |
+| Explore agent     | codebase exploration, multi-file search, patterns          |
+| Plan agent        | implementation planning                                    |
+| general-purpose   | research questions                                         |
+| claude-code-guide | documentation lookup                                       |
+| Direct tool ✓     | single file read/edit, user decisions, quick confirmations |
 
 **Main conversation:** user decisions, agent result synthesis, quick ops
 
@@ -103,16 +106,21 @@ Delegate to agents—their work doesn't accumulate in main context.
 Location: `.workspace/sessions/`
 
 ### Command Sessions
+
 Path: `.workspace/sessions/commands/{date}-{command}-{title}.md`
+
 - Saves workflow state: FASE, step, context per step
 - Example: `2025-12-31-1-plan-portfolio-layout.md`
 
 ### Chat Sessions
+
 Path: `.workspace/sessions/chats/{date}-{title}.md`
+
 - Saves conversation: topics, decisions, notes
 - Example: `2025-12-31-tailwind-research.md`
 
 ### Usage
+
 `/save` or `/save [title]` - Context-aware save
 
 ---
@@ -120,19 +128,32 @@ Path: `.workspace/sessions/chats/{date}-{title}.md`
 ## Workspace Purpose
 
 **Dual purpose repository:**
-1. **Primary:** Command/Skills/Agents development in `.claude/`
-2. **Secondary:** School Website as real-world test case for workflows
+
+1. **Primary:** School Website as real-world test case for workflows
+2. **Secondary:** Command/Skills/Agents development in `.claude/`
 
 ---
 
-## Project (Test Case)
+## Project
 
-**Name**: School Website (Signatuur Portfolio)
+**Name**: Signatuur Portfolio
 **Type**: Web Frontend (React SPA)
-**Description**: Portfolio website schoolopdracht - persoonlijke, professionele en vakinhoudelijke groei
-**Stack**: React 19 + Vite 7 + Tailwind CSS v4 + React Router v7 + Motion + Lucide
-**Created**: 2025-12-29
+**Description**: Signatuur opdracht voor school - persoonlijke groei laten zien over 2 periodes van teamwerk
+**Created**: 2026-01-03
+
+### Stack
+
+**Frontend**: React 19, Vite 7, JavaScript
+**Styling**: Tailwind CSS v4
+**Routing**: React Router DOM v7
+**Libraries**: Motion, Lucide React
+
+### Testing
+
+**Frontend**: Vitest, React Testing Library
+**E2E**: Playwright (optional)
 
 ### Documentation Generators
-**Enabled:** components, routes, design-tokens
-**Available:** state, api-calls
+
+**Enabled:** components
+**Available:** routes, state, design-tokens, api-calls

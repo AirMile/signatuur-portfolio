@@ -1,8 +1,8 @@
 # Stack Baseline Research
 
-Generated: 2025-12-29
-Stack: React 19 + Vite 7 + Tailwind CSS v4 + React Router v7 + Motion
-Valid until: 2026-03-29
+Generated: 2026-01-03
+Stack: React 19 + Vite 7 + Tailwind CSS v4 + React Router v7 + Motion + Lucide React
+Valid until: 2026-04-03
 
 ## Framework Conventions
 
