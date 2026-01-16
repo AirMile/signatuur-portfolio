@@ -92,7 +92,7 @@ function AppContent() {
   return (
     <div className="min-h-screen text-white">
       <ScrollBackground />
-      <ProgressBar />
+      <ProgressBar color={SECTIONS[activeIndex].color} />
       <TimelineNav sections={SECTIONS} activeIndex={activeIndex} />
 
       <TimelineSection
@@ -101,7 +101,7 @@ function AppContent() {
         color="from-red-500 to-rose-600"
         background={<AnimatedBackground />}
       >
-        <p className="max-w-2xl text-center text-xl text-slate-300">
+        <p className="max-w-2xl text-left text-base text-slate-300 md:text-xl">
           Welkom! Ik ben Miles en dit is mijn signatuur over persoonlijke en
           professionele groei. Elke dag werk ik aan een betere versie van
           mezelf. Hier deel ik mijn ontwikkeling als Creatief Technoloog door

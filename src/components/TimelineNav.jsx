@@ -30,7 +30,7 @@ export function TimelineNav({ sections, activeIndex }) {
   };
 
   return (
-    <nav className="fixed top-1/2 right-8 z-50 flex -translate-y-1/2 flex-col gap-4">
+    <nav className="fixed top-1/2 right-8 z-50 hidden -translate-y-1/2 flex-col gap-4 md:flex">
       {sections.map((section, index) => {
         const isActive = index === activeIndex;
         const isHovered = index === hoveredIndex;
