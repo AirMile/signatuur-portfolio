@@ -1,7 +1,15 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
-export function TimelineSection({ id, title, period, color, image, children }) {
+export function TimelineSection({
+  id,
+  title,
+  period,
+  color,
+  image,
+  background,
+  children,
+}) {
   const sectionRef = useRef(null);
 
   // Parallax scroll effect for the background image
@@ -61,13 +69,11 @@ export function TimelineSection({ id, title, period, color, image, children }) {
         </motion.div>
       )}
 
-      {/* Gradient overlay */}
-      <div
-        className={`absolute inset-0 z-10 bg-gradient-to-br ${color} opacity-20 dark:opacity-30`}
-      />
+      {/* Optional animated background */}
+      {background && <div className="absolute inset-0 z-[1]">{background}</div>}
 
       {/* Content container */}
-      <div className="relative z-20 flex min-h-screen flex-col justify-center px-6 py-20 md:px-12 lg:px-24">
+      <div className="relative z-10 flex min-h-screen flex-col justify-center px-6 py-20 md:px-12 lg:px-24">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -112,9 +118,6 @@ export function TimelineSection({ id, title, period, color, image, children }) {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-white dark:from-gray-900" />
     </section>
   );
 }

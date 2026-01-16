@@ -8,31 +8,29 @@ import { TimelineNav } from './components/TimelineNav';
 import { TimelineSection } from './components/TimelineSection';
 import { TimelineItem } from './components/TimelineItem';
 import { ContentCard } from './components/ContentCard';
+import { AnimatedBackground } from './components/AnimatedBackground';
+import { ScrollBackground } from './components/ScrollBackground';
 import { Wrench, TrendingUp, Lightbulb, BookOpen } from 'lucide-react';
 
 const SECTIONS = [
   {
     id: 'intro',
     title: 'Introductie',
-    period: null,
-    color: 'from-slate-500 to-slate-700',
+    color: 'from-red-500 to-rose-600',
   },
   {
     id: 'tle1',
     title: 'TLE 1',
-    period: 'Periode 1',
     color: 'from-purple-500 to-pink-500',
   },
   {
     id: 'tle2',
     title: 'TLE 2',
-    period: 'Periode 2',
     color: 'from-blue-500 to-cyan-500',
   },
   {
     id: 'toekomst',
     title: 'Toekomst',
-    period: null,
     color: 'from-green-500 to-emerald-500',
   },
 ];
@@ -92,51 +90,52 @@ function AppContent() {
   }, [lenis, activeIndex]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <div className="min-h-screen text-white">
+      <ScrollBackground />
       <ProgressBar />
       <TimelineNav sections={SECTIONS} activeIndex={activeIndex} />
 
       <TimelineSection
         id="intro"
         title="Mijn Groei Portfolio"
-        color="from-slate-500 to-slate-700"
+        color="from-red-500 to-rose-600"
+        background={<AnimatedBackground />}
       >
         <p className="max-w-2xl text-center text-xl text-slate-300">
-          Welkom! Ik ben [JOUW NAAM] en dit is mijn portfolio over persoonlijke
-          groei. Hier deel ik mijn ervaringen uit twee periodes van teamwerk,
-          wat ik heb geleerd, en waar ik naartoe wil groeien.
+          Welkom! Ik ben Miles en dit is mijn signatuur over persoonlijke en
+          professionele groei. Elke dag werk ik aan een betere versie van
+          mezelf. Hier deel ik mijn ontwikkeling als Creatief Technoloog door
+          twee TLE-periodes heen.
         </p>
       </TimelineSection>
 
       <TimelineSection
         id="tle1"
         title="TLE 1"
-        period="Periode 1"
         color="from-purple-500 to-pink-500"
       >
         {/* Intro text */}
         <p className="mb-12 max-w-3xl text-lg text-slate-300">
-          Tijdens de eerste periode heb ik gewerkt aan [PROJECT NAAM]. Hier laat
-          ik zien wat ik heb geleerd en hoe ik ben gegroeid.
+          Tijdens de eerste periode heb ik gewerkt aan een mental health app
+          waarmee gebruikers meer inzicht krijgen in hun mentale gezondheid aan
+          de hand van statistieken en een AI-gegenereerde diary input.
         </p>
 
-        {/* Timeline items - placeholder images, user will add real ones */}
+        {/* Timeline items */}
         <div className="mb-16 space-y-16">
           <TimelineItem
             image="/images/tle1-1.jpg"
             date="September 2025"
-            title="[Titel moment 1]"
-            description="[Beschrijf wat je hier hebt geleerd of gedaan. Voeg details toe over de context en je rol.]"
+            title="Hypotheses & Onderzoeksvragen"
+            description="Ik heb geleerd om mijn aannames en ideeën om te zetten naar hypotheses en onderzoeksvragen. Door deze te formuleren en onderzoek te doen met bronnen en fieldresearch, kon ik mijn ideeën beter onderbouwen. Deze aanpak past goed bij mijn conceptuele denkstijl."
             index={0}
-            tags={['Toolkit']}
           />
           <TimelineItem
             image="/images/tle1-2.jpg"
             date="Oktober 2025"
-            title="[Titel moment 2]"
-            description="[Beschrijf een ander belangrijk moment. Focus op je groei en samenwerking.]"
+            title="Feedback & Inzichten"
+            description="Sem gaf feedback dat ik de code niet goed had afgestemd bij de overgang van testdata naar echte data. Jade merkte op dat ze niet altijd wist waar ik mee bezig was. Deze feedback liet me inzien dat ik duidelijker moet communiceren over mijn werk en code."
             index={1}
-            tags={['Groei']}
           />
         </div>
 
@@ -148,8 +147,10 @@ function AppContent() {
             color="from-purple-500 to-pink-500"
           >
             <p>
-              [Welke theorie en methoden heb je geleerd? Hoe heb je ze
-              toegepast?]
+              Ik heb geleerd met hypotheses en onderzoeksvragen te werken,
+              empathy maps en persona's te maken, en de MoSCoW-methode toe te
+              passen. Ook het brainstormen via toekomstscenario's paste goed bij
+              mij door mijn interesse in sci-fi en fantasy verhalen schrijven.
             </p>
           </ContentCard>
           <ContentCard
@@ -158,8 +159,12 @@ function AppContent() {
             color="from-purple-500 to-pink-500"
           >
             <p>
-              [Wat zijn je plus- en verbeterpunten? Welke rol speelde je in het
-              team?]
+              <strong>Pluspunt:</strong> Ik nam een creative director rol aan
+              met conceptueel denken, assertieve houding, en UI/UX bijdragen.
+              <br />
+              <strong>Verbeterpunt:</strong> Doorzettingsvermogen bij technische
+              setbacks. Bij tegenslag vertoonde ik vluchtgedrag en zocht ik
+              andere taken om uit te voeren.
             </p>
           </ContentCard>
         </div>
@@ -168,13 +173,14 @@ function AppContent() {
       <TimelineSection
         id="tle2"
         title="TLE 2"
-        period="Periode 2"
         color="from-blue-500 to-cyan-500"
       >
         {/* Intro text */}
         <p className="mb-12 max-w-3xl text-lg text-slate-300">
-          In de tweede periode heb ik gewerkt aan [PROJECT NAAM]. Hier laat ik
-          zien hoe ik ben gegroeid ten opzichte van TLE 1.
+          In de tweede periode heb ik gewerkt aan Natuurmoment: een
+          webapplicatie die 13-jarigen op een speelse manier de natuur in trekt
+          met een foto-bingo en route-vragen. Hier laat ik zien hoe ik ben
+          gegroeid.
         </p>
 
         {/* Timeline items */}
@@ -182,18 +188,18 @@ function AppContent() {
           <TimelineItem
             image="/images/tle2-1.jpg"
             date="November 2025"
-            title="[Titel moment 1]"
-            description="[Beschrijf wat je hier hebt geleerd of gedaan. Laat zien hoe je bent gegroeid sinds TLE 1.]"
+            title="Crazy 8's & Figma"
+            description="Ik heb het spelconcept bedacht en uitgewerkt met Crazy 8's: een concept idee met verschillende versies van de interface. Daarna werkte ik de wireframes uit in Figma. De ontwerpgerichte SPRINT-aanpak paste goed bij mij: aannames maken en snel itereren."
             index={0}
-            tags={['Toolkit', 'Groei']}
+            disableParallax
           />
           <TimelineItem
             image="/images/tle2-2.jpg"
             date="December 2025"
-            title="[Titel moment 2]"
-            description="[Beschrijf een ander belangrijk moment. Focus op je SMART actiepunten en hoe je die hebt toegepast.]"
+            title="Doorzettingsvermogen & Afmaken"
+            description="Waar ik bij voorgaande CLE's en TLE 1 de laatste procenten liet liggen, heb ik bij TLE 2 het project écht over de streep getrokken. Ik heb alles nagelopen, kleine UI-dingen verbeterd, en edge cases getest. Een finished product waar ik trots op ben."
             index={1}
-            tags={['Groei']}
+            disableParallax
           />
         </div>
 
@@ -205,8 +211,11 @@ function AppContent() {
             color="from-blue-500 to-cyan-500"
           >
             <p>
-              [Welke nieuwe theorie en methoden heb je geleerd? Hoe verhoudt dit
-              zich tot TLE 1?]
+              Nieuwe tools: <strong>Figma</strong> voor UI/UX design,{' '}
+              <strong>Crazy 8's</strong> om snel interface-variaties te
+              schetsen, en de <strong>ontwerpgerichte SPRINT-aanpak</strong>.
+              UI/UX design gaat me goed af; technische backend skills wil ik nog
+              verder ontwikkelen.
             </p>
           </ContentCard>
           <ContentCard
@@ -215,8 +224,12 @@ function AppContent() {
             color="from-blue-500 to-cyan-500"
           >
             <p>
-              [Hoe heb je je SMART actiepunten uit TLE 1 toegepast? Wat zijn je
-              nieuwe inzichten?]
+              <strong>Doorzettingsvermogen:</strong> Ondanks negatieve gedachten
+              elke dag naar school en productief. Van vluchtgedrag naar het
+              project echt over de streep trekken.
+              <br />
+              <strong>Nieuw verbeterpunt:</strong> Code uitleggen. Henk-jan en
+              Antwan bevestigden dit als mijn "missing link" als CMGT'er.
             </p>
           </ContentCard>
         </div>
@@ -228,18 +241,24 @@ function AppContent() {
         color="from-green-500 to-emerald-500"
       >
         <p className="mb-12 max-w-3xl text-lg text-slate-300">
-          Mijn visie op de toekomst en hoe het nachtkastboek mijn kijk op het
-          vakgebied heeft beinvloed.
+          Mijn visie op de toekomst: elke dag een stap vooruit. Geïnspireerd
+          door het Atomic Habits-concept geloof ik in kleine dagelijkse
+          verbeteringen die samen grote impact maken.
         </p>
 
         <div className="grid gap-6 md:grid-cols-2">
           <ContentCard
             icon={<BookOpen className="h-6 w-6 text-white" />}
-            title="Nachtkastboek"
+            title="Nachtkastboek: Hooked"
             color="from-green-500 to-emerald-500"
           >
             <p>
-              [Welk boek heb je gelezen? Welke inzichten heb je eruit gehaald?]
+              <strong>Hooked: How to Build Habit-Forming Products</strong>{' '}
+              leerde me niet alleen hoe je producten verslavend maakt, maar ook
+              wat <em>slecht</em> design is. Ik pas dit toe door user
+              experiences te streamlinen: zo min mogelijk pagina's, buttons op
+              logische plekken, en de user path actief volgen om frustratie te
+              voorkomen.
             </p>
           </ContentCard>
           <ContentCard
@@ -248,8 +267,13 @@ function AppContent() {
             color="from-green-500 to-emerald-500"
           >
             <p>
-              [Hoe wil je je in de toekomst verder ontwikkelen? Wat zijn je
-              concrete doelen?]
+              <strong>TLE 3:</strong> Code begrijpen én uitleggen - mijn
+              "missing link" als CMGT'er. Na elke feature tijd nemen om alles
+              echt te snappen.
+              <br />
+              <strong>Lange termijn:</strong> Fullstack developer worden, TLE 4
+              startup ervaring, en stage bij een agency om te ontdekken of dat
+              bij mij past.
             </p>
           </ContentCard>
         </div>

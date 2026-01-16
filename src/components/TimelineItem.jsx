@@ -2,17 +2,31 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import { ImageIcon } from 'lucide-react';
 
-export function TimelineItem({ image, date, title, description, index, tags }) {
+export function TimelineItem({
+  image,
+  date,
+  title,
+  description,
+  index,
+  tags,
+  disableParallax = false,
+}) {
   const ref = useRef(null);
   const isEven = index % 2 === 0;
   const [imageError, setImageError] = useState(false);
 
-  // Parallax for image
+  // Parallax for image - shifts image within container as user scrolls
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end start'],
+    // Start when element is 60% down viewport, end when it leaves top
+    offset: ['start 0.6', 'end start'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  // Image starts at top (0%), shifts down (-40%) for faster scroll through image
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    disableParallax ? ['0%', '0%'] : ['0%', '-40%']
+  );
 
   return (
     <motion.div
@@ -25,24 +39,31 @@ export function TimelineItem({ image, date, title, description, index, tags }) {
         isEven ? 'md:flex-row' : 'md:flex-row-reverse'
       }`}
     >
-      {/* Image container */}
+      {/* Image container - fixed height window that reveals image via parallax */}
       <div className="flex-1 overflow-hidden rounded-2xl shadow-xl">
-        <motion.div style={{ y }} className="h-full w-full">
+        <div
+          className={`relative overflow-hidden ${disableParallax ? 'h-auto' : 'h-[400px]'}`}
+        >
           {!imageError && image ? (
-            <img
+            <motion.img
+              style={disableParallax ? {} : { y }}
               src={image}
               alt={title}
-              className="h-full min-h-64 w-full object-cover"
+              className={
+                disableParallax
+                  ? 'w-full object-contain'
+                  : 'absolute inset-x-0 top-0 min-h-[120%] w-full object-cover object-top'
+              }
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="flex h-full min-h-64 w-full flex-col items-center justify-center gap-4 bg-slate-800/50 text-slate-500">
+            <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-slate-800/50 text-slate-500">
               <ImageIcon className="h-16 w-16" />
               <span className="text-sm">Voeg afbeelding toe</span>
               <span className="text-xs text-slate-600">{image}</span>
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* Text content */}

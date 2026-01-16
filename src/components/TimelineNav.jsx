@@ -2,6 +2,14 @@ import { motion } from 'motion/react';
 import { useLenis } from 'lenis/react';
 import { useState } from 'react';
 
+// Map section colors (Tailwind gradient classes) to hex values
+const COLOR_MAP = {
+  'from-red-500 to-rose-600': { dot: '#e11d48', ring: '#fb7185' },
+  'from-purple-500 to-pink-500': { dot: '#a855f7', ring: '#c084fc' },
+  'from-blue-500 to-cyan-500': { dot: '#3b82f6', ring: '#60a5fa' },
+  'from-green-500 to-emerald-500': { dot: '#22c55e', ring: '#4ade80' },
+};
+
 export function TimelineNav({ sections, activeIndex }) {
   const lenis = useLenis();
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -15,11 +23,21 @@ export function TimelineNav({ sections, activeIndex }) {
     }
   };
 
+  // Get the active section's colors
+  const activeColors = COLOR_MAP[sections[activeIndex]?.color] || {
+    dot: '#a78bfa',
+    ring: '#c4b5fd',
+  };
+
   return (
     <nav className="fixed top-1/2 right-8 z-50 flex -translate-y-1/2 flex-col gap-4">
       {sections.map((section, index) => {
         const isActive = index === activeIndex;
         const isHovered = index === hoveredIndex;
+        const sectionColors = COLOR_MAP[section.color] || {
+          dot: '#a78bfa',
+          ring: '#c4b5fd',
+        };
 
         return (
           <div
@@ -55,7 +73,7 @@ export function TimelineNav({ sections, activeIndex }) {
                 animate={{
                   width: isActive ? 12 : 8,
                   height: isActive ? 12 : 8,
-                  backgroundColor: isActive ? '#a78bfa' : '#52525b',
+                  backgroundColor: isActive ? activeColors.dot : '#52525b',
                 }}
                 transition={{
                   type: 'spring',
@@ -67,7 +85,8 @@ export function TimelineNav({ sections, activeIndex }) {
               {/* Active ring */}
               {isActive && (
                 <motion.span
-                  className="absolute rounded-full border-2 border-violet-400"
+                  className="absolute rounded-full border-2"
+                  style={{ borderColor: activeColors.ring }}
                   initial={{ width: 12, height: 12, opacity: 0 }}
                   animate={{ width: 20, height: 20, opacity: 1 }}
                   transition={{
