@@ -6,8 +6,6 @@ Mijn persoonlijke groei portfolio voor de Signatuur opdracht. Hier deel ik mijn 
 
 🌐 **Live website:** [signatuur-portfolio.vercel.app](https://signatuur-portfolio.vercel.app/)
 
-📁 **GitHub repository:** [github.com/AirMile/signatuur-portfolio](https://github.com/AirMile/signatuur-portfolio)
-
 ## Inhoud
 
 - **Introductie** - Wie ik ben en mijn visie op groei
