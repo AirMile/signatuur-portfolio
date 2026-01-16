@@ -1,16 +1,23 @@
-# React + Vite
+# Signatuur Portfolio - Miles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mijn persoonlijke groei portfolio voor de Signatuur opdracht. Hier deel ik mijn ontwikkeling als Creatief Technoloog door twee TLE-periodes heen.
 
-Currently, two official plugins are available:
+## Bekijken
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 **Live website:** [signatuur-portfolio.vercel.app](https://signatuur-portfolio.vercel.app/)
 
-## React Compiler
+📁 **GitHub repository:** [github.com/AirMile/signatuur-portfolio](https://github.com/AirMile/signatuur-portfolio)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Inhoud
 
-## Expanding the ESLint configuration
+- **Introductie** - Wie ik ben en mijn visie op groei
+- **TLE 1** - Mental health app project, hypotheses & feedback
+- **TLE 2** - Natuurmoment webapp, doorzettingsvermogen & afmaken
+- **Toekomst** - Nachtkastboek inzichten en toekomstplannen
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React 19 + Vite 7
+- Tailwind CSS v4
+- Motion (Framer Motion)
+- Lenis (smooth scroll)
