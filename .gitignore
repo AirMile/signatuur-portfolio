@@ -36,3 +36,10 @@ temp/
 .claude/commands/
 .claude/resources/
 .claude/scripts/
+CLAUDE.md
+.claude/
+.project/
+
+# Inspect overlay (synced from claude-config)
+inspect-overlay-client.js
+inspect-overlay.vite.ts

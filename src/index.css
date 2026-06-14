@@ -5,7 +5,10 @@
   /* Main Colors */
   --color-dark: oklch(0.21 0.04 265);
   --color-light: oklch(0.98 0.005 265);
-  --color-mid-gray: oklch(0.55 0.03 256);
+  --color-body: oklch(
+    0.44 0.03 256
+  ); /* body text — ≥4.5:1 op --color-light (WCAG AA) */
+  --color-mid-gray: oklch(0.55 0.03 256); /* decoratief / grote tekst */
   --color-light-gray: oklch(0.93 0.01 265);
 
   /* Accent Colors */
@@ -13,6 +16,7 @@
   --color-accent-tle1: oklch(0.56 0.29 302);
   --color-accent-tle2: oklch(0.55 0.245 263);
   --color-accent-tle3: oklch(0.62 0.13 195);
+  --color-accent-tle4: oklch(0.7 0.16 60);
   --color-accent-toekomst: oklch(0.63 0.19 149);
 
   /* Section Gradients */
@@ -24,6 +28,8 @@
   --gradient-tle2-to: oklch(0.72 0.14 215);
   --gradient-tle3-from: oklch(0.66 0.13 200);
   --gradient-tle3-to: oklch(0.72 0.13 185);
+  --gradient-tle4-from: oklch(0.72 0.18 65);
+  --gradient-tle4-to: oklch(0.7 0.15 45);
   --gradient-toekomst-from: oklch(0.72 0.22 150);
   --gradient-toekomst-to: oklch(0.7 0.17 162);
 

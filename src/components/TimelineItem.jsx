@@ -83,7 +83,7 @@ export function TimelineItem({
         <h3 className="text-2xl font-bold text-[var(--color-dark)]">{title}</h3>
 
         {/* Description */}
-        <p className="leading-relaxed text-[var(--color-mid-gray)]">
+        <p className="leading-relaxed text-[var(--color-body)]">
           {description}
         </p>
 

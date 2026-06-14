@@ -1,19 +1,13 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ReactLenis, useLenis } from 'lenis/react';
 import { cancelFrame, frame } from 'motion/react';
 
 import { ProgressBar } from './components/ProgressBar';
-import { TimelineNav } from './components/TimelineNav';
 import { TimelineSection } from './components/TimelineSection';
 import { TimelineItem } from './components/TimelineItem';
 import { ContentCard } from './components/ContentCard';
-import { AnimatedBackground } from './components/AnimatedBackground';
 import { ScrollBackground } from './components/ScrollBackground';
-
-const Groeireis3D = lazy(() =>
-  import('./components/Groeireis3D').then((m) => ({ default: m.Groeireis3D }))
-);
 import {
   Wrench,
   TrendingUp,
@@ -116,27 +110,27 @@ function AppContent() {
   }, [lenis, activeIndex]);
 
   return (
-    <div className="min-h-screen text-[var(--color-dark)]">
+    <div className="relative min-h-screen text-[var(--color-dark)]">
+      <a
+        href="#hoofdinhoud"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-[var(--color-light-gray)] focus:px-4 focus:py-2 focus:text-[var(--color-dark)] focus:shadow-lg"
+      >
+        Naar inhoud
+      </a>
       <ScrollBackground />
-      <Suspense fallback={null}>
-        <Groeireis3D />
-      </Suspense>
       <ProgressBar color={SECTIONS[activeIndex].color} />
-      <TimelineNav sections={SECTIONS} activeIndex={activeIndex} />
-
-      <main>
+      <main id="hoofdinhoud" tabIndex={-1} className="outline-none">
         <TimelineSection
           id="intro"
           title="Mijn Groei Portfolio"
           titleAs="h1"
           color="from-[var(--gradient-intro-from)] to-[var(--gradient-intro-to)]"
-          background={<AnimatedBackground />}
         >
-          <p className="max-w-2xl text-left text-base text-[var(--color-mid-gray)] md:text-xl">
+          <p className="max-w-2xl text-left text-base text-[var(--color-body)] md:text-xl">
             Welkom! Ik ben Miles en dit is mijn signatuur over persoonlijke en
             professionele groei. Elke dag werk ik aan een betere versie van
             mezelf. Hier deel ik mijn ontwikkeling als Creatief Technoloog door
-            twee TLE-periodes heen.
+            vier TLE-periodes heen.
           </p>
         </TimelineSection>
 
@@ -146,7 +140,7 @@ function AppContent() {
           color="from-[var(--gradient-tle1-from)] to-[var(--gradient-tle1-to)]"
         >
           {/* Intro text */}
-          <p className="mb-12 max-w-3xl text-lg text-[var(--color-mid-gray)]">
+          <p className="mb-12 max-w-3xl text-lg text-[var(--color-body)]">
             Tijdens de eerste periode heb ik gewerkt aan een mental health app
             waarmee gebruikers meer inzicht krijgen in hun mentale gezondheid
             aan de hand van statistieken en een AI-gegenereerde diary input.
@@ -210,7 +204,7 @@ function AppContent() {
           color="from-[var(--gradient-tle2-from)] to-[var(--gradient-tle2-to)]"
         >
           {/* Intro text */}
-          <p className="mb-12 max-w-3xl text-lg text-[var(--color-mid-gray)]">
+          <p className="mb-12 max-w-3xl text-lg text-[var(--color-body)]">
             In de tweede periode heb ik gewerkt aan Natuurmoment: een
             webapplicatie die 13-jarigen op een speelse manier de natuur in
             trekt met een foto-bingo en route-vragen. Hier laat ik zien hoe ik
@@ -277,12 +271,30 @@ function AppContent() {
           color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
         >
           {/* Intro */}
-          <p className="mb-12 max-w-3xl text-lg text-[var(--color-mid-gray)]">
+          <p className="mb-12 max-w-3xl text-lg text-[var(--color-body)]">
             Muziek-aanbevelingsbackend (REST API, Express 5 + MongoDB) voor
             SonarPoppy — een team van vier. Ik en Martijn als AI leads. Als AI
             lead bouwde ik vijf features rond het aanbevelingssysteem en
             verdiepte ik me in cosine similarity en collaborative filtering.
           </p>
+
+          {/* Timeline items */}
+          <div className="mb-16 space-y-16">
+            <TimelineItem
+              image="/images/tle3-1.jpg"
+              date="TLE 3 · 2026"
+              title="Score-explain in de praktijk"
+              description="Per aanbeveling laat de API zien hoe de score is opgebouwd: genre-similarity, de collaborative filtering-bijdrage, weights en feedback-multipliers. Technisch het complexst, en het meest waardevol om aanbevelingen te kunnen verklaren en debuggen."
+              index={0}
+            />
+            <TimelineItem
+              image="/images/tle3-2.jpg"
+              date="TLE 3 · 2026"
+              title="De aanbevelingspipeline"
+              description="De backend combineert smaakprofielen uit sliders met genre-, mood- en explicit-filters tot een gepersonaliseerde lijst. Score-weights zijn live aanpasbaar zonder herstart, handig voor A/B-testing."
+              index={1}
+            />
+          </div>
 
           {/* 5 feature-cards */}
           <h3 className="mb-6 text-xl font-semibold text-[var(--color-dark)]">
@@ -293,6 +305,7 @@ function AppContent() {
               icon={<KeyRound className="h-6 w-6 text-[var(--color-light)]" />}
               title="Dual authentication"
               color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
+              variant="feature"
             >
               <p>
                 JWT voor gebruikerssessies én API key-authenticatie voor
@@ -306,6 +319,7 @@ function AppContent() {
               }
               title="Slider-presets"
               color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
+              variant="feature"
             >
               <p>
                 Smaakprofielen als stelbare sliders: gebruikers kiezen hun
@@ -317,6 +331,7 @@ function AppContent() {
               icon={<Filter className="h-6 w-6 text-[var(--color-light)]" />}
               title="Gefilterde aanbevelingen"
               color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
+              variant="feature"
             >
               <p>
                 Pipeline die genre, mood en explicit-flag combineert om een
@@ -328,6 +343,7 @@ function AppContent() {
               icon={<Settings2 className="h-6 w-6 text-[var(--color-light)]" />}
               title="Live scoring-config"
               color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
+              variant="feature"
             >
               <p>
                 Admin-endpoint om score-weights live aan te passen zonder
@@ -341,6 +357,7 @@ function AppContent() {
               }
               title="Score-explain"
               color="from-[var(--gradient-tle3-from)] to-[var(--gradient-tle3-to)]"
+              variant="feature"
             >
               <p>
                 Laat per aanbeveling zien hoe de score is opgebouwd:
@@ -403,7 +420,7 @@ function AppContent() {
           color="from-[var(--gradient-tle4-from)] to-[var(--gradient-tle4-to)]"
         >
           {/* Intro tekst */}
-          <p className="mb-12 max-w-3xl text-lg text-[var(--color-mid-gray)]">
+          <p className="mb-12 max-w-3xl text-lg text-[var(--color-body)]">
             In TLE 4 testte ik mijn leerdoel echt. Het team wilde dat ik
             projectlead werd — maar mijn doel was juist het omgekeerde:
             verantwoordelijkheden verdelen. Naarmate iedereen in zijn rol
@@ -471,7 +488,7 @@ function AppContent() {
           title="Toekomst"
           color="from-[var(--gradient-toekomst-from)] to-[var(--gradient-toekomst-to)]"
         >
-          <p className="mb-12 max-w-3xl text-lg text-[var(--color-mid-gray)]">
+          <p className="mb-12 max-w-3xl text-lg text-[var(--color-body)]">
             Mijn visie op de toekomst: elke dag een stap vooruit. Geïnspireerd
             door het Atomic Habits-concept geloof ik in kleine dagelijkse
             verbeteringen die samen grote impact maken.
@@ -510,7 +527,7 @@ function AppContent() {
           </div>
         </TimelineSection>
 
-        <footer className="container mx-auto border-t border-[var(--color-mid-gray)]/30 px-6 py-8 text-center text-[var(--color-mid-gray)]">
+        <footer className="container mx-auto border-t border-[var(--color-mid-gray)]/30 px-6 py-8 text-center text-[var(--color-body)]">
           <p>Signatuur Opdracht - 2026</p>
         </footer>
       </main>
@@ -520,12 +537,12 @@ function AppContent() {
 
 function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[var(--color-bg)] text-[var(--color-dark)]">
-      <span className="text-8xl font-bold text-[var(--color-mid-gray)]/40">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-6 bg-[var(--color-light)] text-[var(--color-dark)]">
+      <span className="text-8xl font-bold text-[var(--color-body)]/40">
         404
       </span>
       <h1 className="text-2xl font-bold">Pagina niet gevonden</h1>
-      <p className="text-[var(--color-mid-gray)]">Deze pagina bestaat niet.</p>
+      <p className="text-[var(--color-body)]">Deze pagina bestaat niet.</p>
       <a
         href="/"
         className="rounded-full bg-[var(--color-light-gray)] px-6 py-2 text-sm font-medium hover:bg-[var(--color-mid-gray)]/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-primary)]"
