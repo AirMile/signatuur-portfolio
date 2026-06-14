@@ -1,4 +1,9 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 import { useRef, useState } from 'react';
 import { ImageIcon } from 'lucide-react';
 
@@ -14,18 +19,17 @@ export function TimelineItem({
   const ref = useRef(null);
   const isEven = index % 2 === 0;
   const [imageError, setImageError] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
-  // Parallax for image - shifts image within container as user scrolls
   const { scrollYProgress } = useScroll({
     target: ref,
-    // Start when element is 60% down viewport, end when it leaves top
     offset: ['start 0.6', 'end start'],
   });
-  // Image starts at top (0%), shifts down (-40%) for faster scroll through image
+  const noParallax = disableParallax || prefersReducedMotion;
   const y = useTransform(
     scrollYProgress,
     [0, 1],
-    disableParallax ? ['0%', '0%'] : ['0%', '-40%']
+    noParallax ? ['0%', '0%'] : ['0%', '-40%']
   );
 
   return (
@@ -57,10 +61,12 @@ export function TimelineItem({
               onError={() => setImageError(true)}
             />
           ) : (
-            <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-slate-800/50 text-slate-500">
+            <div className="flex h-full w-full flex-col items-center justify-center gap-4 bg-[var(--color-light-gray)] text-[var(--color-mid-gray)]">
               <ImageIcon className="h-16 w-16" />
               <span className="text-sm">Voeg afbeelding toe</span>
-              <span className="text-xs text-slate-600">{image}</span>
+              <span className="text-xs text-[var(--color-mid-gray)]/70">
+                {image}
+              </span>
             </div>
           )}
         </div>
@@ -69,15 +75,17 @@ export function TimelineItem({
       {/* Text content */}
       <div className="flex flex-1 flex-col justify-center gap-4">
         {/* Date badge */}
-        <span className="w-fit rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-400">
+        <span className="w-fit rounded-full bg-[var(--color-light-gray)] px-3 py-1 text-sm text-[var(--color-mid-gray)]">
           {date}
         </span>
 
         {/* Title */}
-        <h3 className="text-2xl font-bold text-white">{title}</h3>
+        <h3 className="text-2xl font-bold text-[var(--color-dark)]">{title}</h3>
 
         {/* Description */}
-        <p className="leading-relaxed text-slate-300">{description}</p>
+        <p className="leading-relaxed text-[var(--color-mid-gray)]">
+          {description}
+        </p>
 
         {/* Tags */}
         {tags && tags.length > 0 && (
@@ -85,7 +93,7 @@ export function TimelineItem({
             {tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="rounded-full border border-indigo-500/30 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 px-3 py-1 text-xs font-medium text-indigo-300"
+                className="rounded-full border border-[var(--color-accent-tle2)]/30 bg-gradient-to-r from-[var(--color-accent-tle2)]/15 to-[var(--color-accent-tle1)]/15 px-3 py-1 text-xs font-medium text-[var(--color-accent-tle2)]"
               >
                 {tag}
               </span>

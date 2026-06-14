@@ -8,6 +8,7 @@ export function TimelineSection({
   color,
   image,
   background,
+  titleAs,
   children,
 }) {
   const sectionRef = useRef(null);
@@ -48,6 +49,8 @@ export function TimelineSection({
     },
   };
 
+  const TitleTag = motion[titleAs ?? 'h2'];
+
   return (
     <section
       id={id}
@@ -65,7 +68,7 @@ export function TimelineSection({
             style={{ backgroundImage: `url(${image})` }}
           />
           {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-[var(--color-dark)]/60" />
         </motion.div>
       )}
 
@@ -85,24 +88,24 @@ export function TimelineSection({
           {period && (
             <motion.div variants={childVariants}>
               <span
-                className={`mb-4 inline-block rounded-full bg-gradient-to-r ${color} px-4 py-1.5 text-sm font-medium text-white shadow-lg`}
+                className={`mb-4 inline-block rounded-full bg-gradient-to-r ${color} px-4 py-1.5 text-sm font-medium text-[var(--color-light)] shadow-lg`}
               >
                 {period}
               </span>
             </motion.div>
           )}
 
-          {/* Title */}
-          <motion.h2
+          {/* Title — titleAs="h1" for the page-level intro section */}
+          <TitleTag
             variants={childVariants}
-            className="mb-8 text-4xl font-bold text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+            className="mb-8 text-4xl font-bold text-[var(--color-dark)] md:text-5xl lg:text-6xl"
           >
             <span
               className={`bg-gradient-to-r ${color} bg-clip-text text-transparent`}
             >
               {title}
             </span>
-          </motion.h2>
+          </TitleTag>
 
           {/* Children with staggered animation */}
           <motion.div variants={containerVariants} className="space-y-6">

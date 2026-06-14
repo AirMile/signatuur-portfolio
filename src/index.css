@@ -1,13 +1,161 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  /* Main Colors */
+  --color-dark: oklch(0.21 0.04 265);
+  --color-light: oklch(0.98 0.005 265);
+  --color-mid-gray: oklch(0.55 0.03 256);
+  --color-light-gray: oklch(0.93 0.01 265);
+
+  /* Accent Colors */
+  --color-accent-primary: oklch(0.59 0.22 18);
+  --color-accent-tle1: oklch(0.56 0.29 302);
+  --color-accent-tle2: oklch(0.55 0.245 263);
+  --color-accent-tle3: oklch(0.62 0.13 195);
+  --color-accent-toekomst: oklch(0.63 0.19 149);
+
+  /* Section Gradients */
+  --gradient-intro-from: oklch(0.64 0.24 25);
+  --gradient-intro-to: oklch(0.59 0.22 18);
+  --gradient-tle1-from: oklch(0.63 0.26 304);
+  --gradient-tle1-to: oklch(0.66 0.24 354);
+  --gradient-tle2-from: oklch(0.62 0.21 260);
+  --gradient-tle2-to: oklch(0.72 0.14 215);
+  --gradient-tle3-from: oklch(0.66 0.13 200);
+  --gradient-tle3-to: oklch(0.72 0.13 185);
+  --gradient-toekomst-from: oklch(0.72 0.22 150);
+  --gradient-toekomst-to: oklch(0.7 0.17 162);
+
+  /* Semantic Colors */
+  --color-success: var(--color-accent-toekomst);
+  --color-warning: oklch(0.75 0.15 80);
+  --color-error: oklch(0.59 0.22 25);
+  --color-info: var(--color-accent-tle2);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Font Sizes */
+  --text-display: 3.75rem;
+  --text-title-l: 3rem;
+  --text-title-m: 2.25rem;
+  --text-title-s: 1.5rem;
+  --text-headline-l: 1.25rem;
+  --text-body-l: 1.125rem;
+  --text-body-m: 1rem;
+  --text-body-s: 0.875rem;
+  --text-caption: 0.75rem;
+  --text-code: 0.875rem;
+
+  /* Spacing */
+  --spacing-base: 4px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+
+  /* Border Radius */
+  --rounded-none: 0;
+  --rounded-sm: 0.125rem;
+  --rounded: 0.25rem;
+  --rounded-md: 0.375rem;
+  --rounded-lg: 0.5rem;
+  --rounded-xl: 0.75rem;
+  --rounded-2xl: 1rem;
+  --rounded-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Motion */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-reveal: 600ms;
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-entrance: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Interactions */
+  --focus-ring-width: 2px;
+  --focus-ring-style: solid;
+  --focus-ring-color: var(--color-accent-primary);
+  --focus-ring-offset: 2px;
+
+  /* Animation pack: apple — managed by /frontend-tokens */
+
+  /* Spring tokens */
+  --spring-gentle-duration: 600ms;
+  --spring-gentle-bezier: cubic-bezier(0.33, 1, 0.68, 1);
+  --spring-smooth-duration: 500ms;
+  --spring-smooth-bezier: cubic-bezier(0.32, 1, 0.68, 1);
+  --spring-snappy-duration: 420ms;
+  --spring-snappy-bezier: cubic-bezier(0.4, 1.15, 0.7, 1.05);
+
+  /* iOS easings */
+  --ease-ios-default: cubic-bezier(0.42, 0, 0.58, 1);
+  --ease-ios-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-ios-in: cubic-bezier(0.42, 0, 1, 1);
+  --ease-ios-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-ios-snappy: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-ios-bouncy: cubic-bezier(0.5, 1.6, 0.4, 0.8);
+  --duration-ios-fast: 200ms;
+  --duration-ios-default: 350ms;
+  --duration-ios-modal: 500ms;
+
+  /* Glass surface tokens */
+  --surface-glass-blur: 20px;
+  --surface-glass-saturation: 180%;
+  --surface-glass-tint: color-mix(
+    in oklch,
+    var(--color-light-gray) 70%,
+    transparent
+  );
+  --surface-glass-border: 1px solid
+    color-mix(in oklch, var(--color-dark) 8%, transparent);
+
+  /* End animation pack */
+}
 
 /* Global base styles */
 html {
   scroll-behavior: smooth;
 }
 
+/* Focus-ring — applies the design-token ring to all focusable elements */
+:focus-visible {
+  outline: var(--focus-ring-width) var(--focus-ring-style)
+    var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
