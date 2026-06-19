@@ -1,0 +1,278 @@
+{
+  "ui": {
+    "skipLink": "Naar inhoud",
+    "tle3BuiltHeading": "Wat ik bouwde",
+    "tle3ScoreHeading": "De complexste feature: score-opbouw",
+    "footer": "Signatuur Opdracht - 2026"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet.",
+    "backLabel": "Terug naar home"
+  },
+  "intro": {
+    "eyebrow": "Creatief Technoloog in opleiding",
+    "meta": "Miles Zeilstra · Vier TLE-periodes · 2025-2026",
+    "title": "Mijn Groei Portfolio",
+    "body": "Ik ben Miles, Creatief Technoloog in opleiding. Dit portfolio volgt vier TLE-periodes waarin ik leerde mijn f*cks beter te verdelen: van ideeën leren onderbouwen, naar projecten 100% afmaken, naar de techniek achter mijn code snappen, naar proactief communiceren en verantwoordelijkheden vooraf verdelen in plaats van alles zelf dragen. De twee projecten van het afgelopen halfjaar, SonarPoppy (TLE 3) en Impakt (TLE 4), laten die groei het duidelijkst zien."
+  },
+  "tle1": {
+    "title": "TLE 1",
+    "intro": "Tijdens de eerste periode heb ik gewerkt aan een mental health app waarmee gebruikers meer inzicht krijgen in hun mentale gezondheid aan de hand van statistieken en een AI-gegenereerde diary input.",
+    "timeline": [
+      {
+        "image": "/images/tle1-1.jpg",
+        "disableParallax": true,
+        "date": "September 2025",
+        "title": "Hypotheses & Onderzoeksvragen",
+        "description": "Ik heb geleerd om mijn aannames en ideeën om te zetten naar hypotheses en onderzoeksvragen. Door deze te formuleren en onderzoek te doen met bronnen en fieldresearch, kon ik mijn ideeën beter onderbouwen. Deze aanpak past goed bij mijn conceptuele denkstijl."
+      },
+      {
+        "image": "/images/tle1-2.jpg",
+        "disableParallax": true,
+        "date": "Oktober 2025",
+        "title": "Feedback & Inzichten",
+        "description": "Sem gaf feedback dat ik de code niet goed had afgestemd bij de overgang van testdata naar echte data. Jade gaf aan dat ze niet altijd wist waar ik mee bezig was. Deze feedback liet me inzien dat ik duidelijker moet communiceren over mijn werk en code."
+      }
+    ],
+    "toolkit": {
+      "tools": [
+        "Hypotheses",
+        "Onderzoeksvragen",
+        "Empathy maps",
+        "Persona's",
+        "MoSCoW",
+        "Toekomstscenario's"
+      ],
+      "body": "Het formuleren van hypotheses en onderzoeksvragen gaat me goed af en past bij mijn conceptuele denkstijl; het strak vertalen naar testbare keuzes wil ik nog verder oefenen."
+    },
+    "growth": {
+      "label": "Groei",
+      "items": [
+        {
+          "type": "plus",
+          "title": "Creative director-rol",
+          "description": "Conceptueel denken, assertieve houding en UI/UX-bijdragen."
+        },
+        {
+          "type": "minus",
+          "title": "Doorzettingsvermogen bij setbacks",
+          "description": "Bij technische tegenslag vertoonde ik vluchtgedrag en zocht ik andere taken om uit te voeren."
+        }
+      ]
+    }
+  },
+  "tle2": {
+    "title": "TLE 2",
+    "intro": "In de tweede periode heb ik gewerkt aan Natuurmoment: een webapplicatie die 13-jarigen op een speelse manier de natuur in trekt met een foto-bingo en route-vragen. Hier laat ik zien hoe ik ben gegroeid.",
+    "timeline": [
+      {
+        "image": "/images/tle2-1.jpg",
+        "date": "November 2025",
+        "title": "Crazy 8's & Figma",
+        "description": "Ik heb het spelconcept bedacht en uitgewerkt met Crazy 8's: een concept idee met verschillende versies van de interface. Daarna werkte ik de wireframes uit in Figma. De ontwerpgerichte SPRINT-aanpak paste goed bij mij: aannames maken en snel itereren.",
+        "disableParallax": true
+      },
+      {
+        "image": "/images/tle2-2.jpg",
+        "date": "December 2025",
+        "title": "Doorzettingsvermogen & Afmaken",
+        "description": "Waar ik bij voorgaande CLE's en TLE 1 de laatste procenten liet liggen, heb ik bij TLE 2 het project écht over de streep getrokken. Ik heb alles nagelopen, kleine UI-dingen verbeterd, en edge cases getest. Een finished product waar ik trots op ben.",
+        "disableParallax": true
+      }
+    ],
+    "toolkit": {
+      "tools": ["Figma", "Crazy 8's", "SPRINT-aanpak"],
+      "body": "UI/UX design gaat me goed af; technische backend skills wil ik nog verder ontwikkelen."
+    },
+    "growth": {
+      "label": "Groei",
+      "items": [
+        {
+          "type": "plus",
+          "title": "Doorzettingsvermogen",
+          "description": "Ondanks negatieve gedachten elke dag naar school en productief. Van vluchtgedrag naar het project écht over de streep trekken."
+        },
+        {
+          "type": "minus",
+          "title": "Code uitleggen",
+          "description": "Henk-jan en Antwan bevestigden dit als mijn \"missing link\" als CMGT'er."
+        }
+      ]
+    }
+  },
+  "tle3": {
+    "title": "TLE 3: SonarPoppy",
+    "intro": "Ethisch AI-aanbevelingssysteem als REST API (Express 5 + MongoDB), gebouwd met een team van vier in twee subteams (front-end en back-end). Martijn en ik waren de AI leads van het back-end-team. Ik heb het aanbevelingsalgoritme grotendeels uitgedacht en gebouwd: per track wordt een score berekend op basis van hoe goed die past bij het smaakprofiel, dat voor de user inzichtelijk en aanpasbaar is.",
+    "timeline": [
+      {
+        "image": "/images/tle3-1.webp",
+        "date": "TLE 3 · 2026",
+        "title": "Het aanbevelingsalgoritme",
+        "description": "Ik was verantwoordelijk voor de scoring. Elke track krijgt een 20-dimensionale genre-vector uit Last.fm-tags; de score is een hybride van genre-similarity (cosine similarity) en collaborative filtering, standaard 50/50 gewogen. Het smaakprofiel is voor de user inzichtelijk én aanpasbaar via sliders.",
+        "disableParallax": true
+      },
+      {
+        "image": "/images/tle3-2.webp",
+        "date": "TLE 3 · 2026",
+        "title": "Feature voor feature, met tests",
+        "description": "Ik werkte mijn features één voor één af in een vaste cyclus: requirements, code, testen, refactoren. Die structuur hielp me het overzicht te houden in een backend die met auth, sliders, recommendations, feedback en admin-tuning snel complex werd.",
+        "disableParallax": true
+      }
+    ],
+    "endpoints": [
+      {
+        "method": "POST",
+        "route": "/api/v1/api-keys",
+        "title": "Dual authentication",
+        "description": "Twee lagen: een JWT (Bearer) per user-sessie en een API key (prefix sk_live_) per applicatie, meegestuurd als X-API-Key. Elke beveiligde call vereist beide headers; mist er één, dan volgt een 401."
+      },
+      {
+        "method": "PUT",
+        "route": "/api/v1/sliders",
+        "title": "Genre-sliders & presets",
+        "description": "20 genre-sliders bepalen hoe zwaar elk genre meetelt. Via /api/v1/slider-presets sla je tot 5 snapshots op; bij eerste gebruik worden 3 defaults aangemaakt (Balanced, Chill Vibes, High Energy). Apply overschrijft je huidige sliders."
+      },
+      {
+        "method": "POST",
+        "route": "/api/v1/recommendations",
+        "title": "Gefilterde aanbevelingen",
+        "description": "Hoofdendpoint: neemt een 20-dim profielvector en geeft tracks gesorteerd op score. Filters (genre, artist, sort, explicit, unplayed, recentDays, minScore) stapelen als AND-condities, met paginering via limit/offset."
+      },
+      {
+        "method": "GET",
+        "route": "/api/v1/dial",
+        "title": "Adventure dial (bubble-filter)",
+        "description": "Vijf standen, van 1 'Strikt' (alleen hoge genre-match) tot 5 'Anti-bubbel' (random sortering). Belangrijk: de dial verandert de scoring niet, die blijft 50/50, maar bepaalt welke tracks door de bubble-filter komen en hoe ze sorteren."
+      },
+      {
+        "method": "PATCH",
+        "route": "/api/v1/admin/config",
+        "title": "Live scoring-config",
+        "description": "Admins passen de hybrid weights en feedback-multipliers live aan zonder herstart: een like geeft 1.1x, een dislike 0.5x, library 1.2x, skip 0.9x. Wijzigingen zijn meteen zichtbaar in de aanbevelingen."
+      }
+    ],
+    "scoreExplain": {
+      "route": "/api/v1/admin/explain/:trackId",
+      "example": "Creep van Radiohead",
+      "steps": [
+        { "label": "genreScore (cosine similarity)", "value": "0.82" },
+        { "label": "cfScore (collaborative filtering)", "value": "0.65" },
+        { "label": "rawScore = 0.82·0.5 + 0.65·0.5", "value": "0.735" },
+        { "label": "× feedbackMultiplier (like 1.1x)", "value": "0.81" },
+        { "label": "bubbleFilter (dial 3)", "value": "passed" }
+      ],
+      "finalScore": "0.81",
+      "note": "Score-explain laat per aanbeveling zien hoe de finalScore is opgebouwd: genre, CF, de weights, de feedback-multiplier en of de track door de bubble-filter komt. De complexste feature die ik bouwde. Het lastigst was het omgaan met ontbrekende data (een track zonder CF-data) en het bepalen van de juiste weging tussen genre-similarity en collaborative filtering."
+    },
+    "reflections": [
+      {
+        "label": "Toolkit",
+        "title": "Toolkit uitgebreid",
+        "body": [
+          "Mijn grootste les: AI is een rekenmachine. Ik leunde erop voor de wiskunde achter <strong>cosine similarity</strong> en <strong>collaborative filtering</strong>, maar begrijpen wat eruit kwam, en kunnen uitleggen waarom een track scoort, bleef mijn werk. Daar werd ik deze periode beter in. Wat me nu goed afgaat: kunnen uitleggen waarom een track scoort. Waar ik nog mee wil oefenen: eerder valideren dat de uitkomst ook echt klopt, in plaats van te vertrouwen op de berekening."
+        ]
+      },
+      {
+        "label": "Houding",
+        "title": "Houding",
+        "body": [
+          "<strong>Pluspunt:</strong> mijn kritische doorvragen viel goed; het maakte het team scherper in keuzes.<br /><strong>Verbeterpunt:</strong> te veel f*cks aan controle. Ik deelde te weinig tussendoor waar ik mee bezig was en bewaakte te vaak zelf de orde."
+        ]
+      },
+      {
+        "label": "Groei",
+        "title": "Wat ik anders deed",
+        "body": [
+          "Aan het eind van TLE 3 kwam uit de teamfeedback dezelfde tip: meer zichtbaarheid in mijn werk. Mijn kritische houding en doorvragen werden gewaardeerd, maar ik moest beter communiceren waar ik mee bezig was. Halverwege ging dit al beter: na de feedback ben ik bewuster gaan updaten en gaven teamgenoten aan dat ze wisten waar ik stond. Hieruit formuleerde ik twee SMART-actiepunten voor TLE 4 (zie de sectie hieronder)."
+        ]
+      }
+    ]
+  },
+  "tle4": {
+    "title": "TLE 4: Impakt",
+    "intro": "In TLE 4 testte ik mijn leerdoel echt. Het team wilde dat ik projectlead werd, maar mijn doel was juist het omgekeerde: verantwoordelijkheden verdelen. Naarmate iedereen in zijn rol groeide, hoefde ik alleen nog te bewaken dat mensen hun taken oppakten. Mijn trots dit semester is niet één feature, maar een team dat zelfstandiger werd. Manson in de praktijk: f*cks niet meer uitgeven aan controle, maar aan de groei van anderen. De app draait inmiddels volwaardig: alle endpoints zijn gekoppeld en we hebben hem gepitcht bij een bedrijf.",
+    "timeline": [
+      {
+        "image": "/images/tle4-1.webp",
+        "disableParallax": true,
+        "date": "TLE 4 · 2026",
+        "title": "Van prototype naar React Native",
+        "description": "Ik begon met een prototype in Claude Design, zette dat op Vercel om mee te testen, en bouwde het om naar React Native met een nette mappenstructuur en tests (Jest, Playwright). Zo had het team meteen een werkende basis om pagina's te tweaken en endpoints te koppelen."
+      },
+      {
+        "image": "/images/tle4-2.webp",
+        "disableParallax": true,
+        "date": "TLE 4 · 2026",
+        "title": "Twee teamgenoten zien opbloeien",
+        "description": "Madya schuurde de vorige TLE's met veel teamgenoten: kleine ruzies, mensen die niet meer met haar wilden werken. De eerste week kwam dat patroon terug, maar na feedbackmomenten en wat sturing van mij pakte ze haar rol (concept + urenregistratie) echt. Martijn is normaal stil, maar kon hier een prominente rol pakken als techlead in de backend. Dat het team zo zelfstandig werd, is waar ik het meest trots op ben."
+      }
+    ],
+    "toolkit": {
+      "tools": [
+        "React Native + Expo",
+        "Filament",
+        "Claude, Vercel, RN",
+        "Jest",
+        "Playwright"
+      ],
+      "body": "Ik bouwde het technische fundament en de frontend-pagina's (feed, detailpagina, meme-feed, profiel) en zette het Filament admin dashboard op. Methodisch trok ik het onderzoek: ik stelde de doelgroep-onderzoeken op zodat we in het weekend echte 18-23-jarigen testten en op input bouwden in plaats van aannames. De methoden die ik dit blok aangereikt kreeg, vormen samen mijn toolkit: doelgroeponderzoek vóór het bouwen, test-driven werken (Jest, Playwright) en itereren vanaf een werkend prototype. Back-end was bij TLE 2 nog een leerpunt, maar in TLE 2 en TLE 3 bouwde ik in het back-end-team de endpoints voor de front-end. Daardoor verbeterde ik mijn kennis en workflow en werd ik er zeker over. In TLE 4 was het juist andersom: ik bouwde de front-end en koppelde de endpoints. Door beide kanten mee te maken, met aparte front-end- en back-end-repo's in twee subteams, kreeg ik een echte fullstack-blik."
+    },
+    "growth": {
+      "label": "SMART-actiepunten uit TLE 3, uitgevoerd in TLE 4",
+      "items": [
+        {
+          "type": "smart",
+          "title": "Actiepunt 1 · Proactief communiceren over voortgang",
+          "description": "Mijn SMART-actiepunt uit TLE 3: in elke standup en wrap-up in 2-3 zinnen benoemen wat ik heb gedaan, waar ik tegenaan loop en wat mijn volgende stap is, en halverwege checken of het werkt. In TLE 4 deed ik dit door na elke standup in Miro te zetten wat ik die dag ging doen. Resultaat: na het splitsen van frontend en backend wist het team beter waar ik stond. In de eindretro kreeg ik wel nog steeds de tip om tussendoor meer te laten weten waar ik mee bezig ben, want ik ben vaak al drie stappen verder als ik iets laat zien. Dit blijft dus mijn groeipunt."
+        },
+        {
+          "type": "smart",
+          "title": "Actiepunt 2 · Sturen zonder alles zelf te doen",
+          "description": "Mijn tweede SMART-actiepunt uit TLE 3: per taak benoemen wie eigenaar is en wat ik verwacht, feedback geven in plaats van zelf inspringen, en halverwege evalueren of het team zelfstandiger functioneert. In TLE 4 liet ik de concept-lead-rol bewust los toen Madya die wilde. Resultaat: Madya pakte haar rol (concept + urenregistratie) echt op en Martijn groeide als techlead in de backend. Dat het team zo zelfstandig werd, is waar ik het meest trots op ben."
+        },
+        {
+          "type": "plus",
+          "title": "Tops uit de eindretro van TLE 4",
+          "description": "Het team noemde mijn bijdrage aan de server en backend en mijn externe communicatie tijdens de pitch sterk. Ik pak taken goed op, denk mee, en ben in discussies eerlijk en niet bang om mijn mening te delen."
+        },
+        {
+          "type": "minus",
+          "title": "Wat ik nog scherper wil",
+          "description": "Loslaten gaf me focus, maar bij een punt als winstgevendheid had ik mijn zorg steviger mogen neerleggen in plaats van die alleen kort te benoemen."
+        }
+      ]
+    }
+  },
+  "toekomst": {
+    "title": "Toekomst",
+    "intro": "De rode draad blijft: f*cks verdelen over wat er echt toe doet. Richting mijn stage betekent dat doorbouwen op proactief communiceren, en mijn fullstack-blik in front-end en back-end verder verzilveren, zodat ik features kan bedenken én end-to-end kan bouwen.",
+    "reflections": [
+      {
+        "label": "Nachtkastboek · TLE 4",
+        "title": "The Subtle Art of Not Giving a F*ck",
+        "body": [
+          "Twee inzichten bleven me bij: je hebt maar een beperkt aantal f*cks te geven, dus kies bewust waaraan, en je waarden bepalen welke problemen je wílt hebben. Dit boek las ik in het laatste blok en het gaf me de woorden voor iets waar ik al mee bezig was: bewust kiezen waar je je f*cks aan besteedt. Voor mij betekende dat minder energie in controle en het bewaken van de orde, en meer in waar ik echt waarde toevoeg, zodat een team ook zonder mij vooruitkomt."
+        ]
+      },
+      {
+        "label": "Nachtkastboek · TLE 1/2",
+        "title": "Hooked: How to Build Habit-Forming Products",
+        "body": [
+          "Wat me het meest bijbleef is het omgekeerde van het boek: herkennen wat <em>slecht</em> design is. Ik pas dat toe door user experiences te streamlinen: zo min mogelijk pagina's, buttons op logische plekken, en de user path volgen om frustratie te voorkomen."
+        ]
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Stage",
+        "text": "Ik loop stage bij Lely in Maassluis: een individuele opdracht met veel zelfstandigheid. Juist daar pak ik mijn groeipunt uit de TLE 4-eindretro op: tussendoor laten weten waar ik mee bezig ben in plaats van pas bij het eindresultaat zichtbaar worden. Mijn concrete plan: elke dag noteren wat ik die dag ga doen, dat gedurende de dag bijwerken, en het regelmatig doorsturen naar mijn begeleider. Halverwege de stage check ik bij mijn begeleider of dit voor hem werkt."
+      },
+      {
+        "phase": "Lange termijn",
+        "text": "Fullstack developer worden. Na het meemaken van beide kanten, back-end in TLE 3 en front-end in TLE 4, wil ik die fullstack-blik verder uitbouwen. Met mijn TLE 4 startup-ervaring en stage bij Lely ontdek ik welke omgeving het best bij me past."
+      }
+    ]
+  }
+}

@@ -1,17 +1,27 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 import { useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 export function TimelineSection({
   id,
   title,
-  period,
   color,
   image,
   background,
   titleAs,
+  isHero = false,
+  sectionNumber,
+  eyebrow,
+  accent = 'var(--color-mid-gray)',
   children,
 }) {
   const sectionRef = useRef(null);
+  const prefersReducedMotion = useReducedMotion();
 
   // Parallax scroll effect for the background image
   const { scrollYProgress } = useScroll({
@@ -22,41 +32,40 @@ export function TimelineSection({
   const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1.1, 1, 1.1]);
 
-  // Stagger animation variants for children
+  // Stagger animation variants for children. Alleen opacity — de y-beweging
+  // laten we aan de children zelf (TimelineItem/kaarten) over, zodat er geen
+  // dubbele reveal-systemen botsen. Reduced motion → geen transitie.
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
+      transition: prefersReducedMotion
+        ? {}
+        : { staggerChildren: 0.12, delayChildren: 0.1 },
     },
   };
 
   const childVariants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-    },
+    hidden: { opacity: prefersReducedMotion ? 1 : 0 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
+      transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
     },
   };
 
   const TitleTag = motion[titleAs ?? 'h2'];
 
+  // Hero vult het scherm en centreert verticaal; content-secties volgen hun
+  // eigen hoogte met consistent verticaal ritme (geen geforceerde centrering).
+  const sectionClass = isHero
+    ? 'relative flex min-h-screen items-center overflow-hidden'
+    : 'relative overflow-hidden';
+  const containerClass = isHero
+    ? 'relative z-10 w-full px-6 md:px-12 lg:px-24'
+    : 'relative z-10 px-6 py-24 md:px-12 lg:px-24 md:py-32';
+
   return (
-    <section
-      id={id}
-      ref={sectionRef}
-      className="relative min-h-screen overflow-hidden"
-    >
+    <section id={id} ref={sectionRef} className={sectionClass}>
       {/* Parallax background image */}
       {image && (
         <motion.div
@@ -76,22 +85,32 @@ export function TimelineSection({
       {background && <div className="absolute inset-0 z-[1]">{background}</div>}
 
       {/* Content container */}
-      <div className="relative z-10 flex min-h-screen flex-col justify-center px-6 py-20 md:px-12 lg:px-24">
+      <div className={containerClass}>
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
           className="mx-auto w-full max-w-6xl"
         >
-          {/* Period badge */}
-          {period && (
+          {/* Sectie-eyebrow — oriëntatie tijdens het scrollen. Content-secties
+              krijgen een genummerde eyebrow ("01 — TLE 1"); de hero een rustige
+              tekst-eyebrow boven de titel. */}
+          {eyebrow && (
             <motion.div variants={childVariants}>
-              <span
-                className={`mb-4 inline-block rounded-full bg-gradient-to-r ${color} px-4 py-1.5 text-sm font-medium text-[var(--color-light)] shadow-lg`}
-              >
-                {period}
-              </span>
+              {isHero ? (
+                <p className="mb-4 text-sm font-medium tracking-[0.2em] text-[var(--color-mid-gray)] uppercase">
+                  {eyebrow}
+                </p>
+              ) : (
+                <div className="mb-3 flex items-center gap-3 text-sm font-medium tracking-[0.2em] text-[var(--color-mid-gray)] uppercase">
+                  {sectionNumber && (
+                    <span style={{ color: accent }}>{sectionNumber}</span>
+                  )}
+                  <span className="h-px w-8 bg-[var(--color-mid-gray)]/40" />
+                  <span>{eyebrow}</span>
+                </div>
+              )}
             </motion.div>
           )}
 
@@ -121,6 +140,18 @@ export function TimelineSection({
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll-cue onderaan de hero */}
+      {isHero && !prefersReducedMotion && (
+        <motion.div
+          className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-[var(--color-mid-gray)]"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
+          aria-hidden="true"
+        >
+          <ChevronDown className="h-6 w-6" />
+        </motion.div>
+      )}
     </section>
   );
 }

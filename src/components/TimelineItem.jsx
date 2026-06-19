@@ -46,7 +46,7 @@ export function TimelineItem({
       {/* Image container - fixed height window that reveals image via parallax */}
       <div className="flex-1 overflow-hidden rounded-2xl shadow-xl">
         <div
-          className={`relative overflow-hidden ${disableParallax ? 'h-auto' : 'h-[400px]'}`}
+          className={`relative overflow-hidden ${disableParallax ? 'flex h-auto justify-center bg-[var(--color-light-gray)]' : 'h-[400px]'}`}
         >
           {!imageError && image ? (
             <motion.img
@@ -55,7 +55,7 @@ export function TimelineItem({
               alt={title}
               className={
                 disableParallax
-                  ? 'w-full object-contain'
+                  ? 'max-h-[75vh] w-full object-contain md:max-h-[600px]'
                   : 'absolute inset-x-0 top-0 min-h-[120%] w-full object-cover object-top'
               }
               onError={() => setImageError(true)}
