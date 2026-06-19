@@ -18,7 +18,7 @@
     "body": "Ik ben Miles, Creatief Technoloog in opleiding. Dit portfolio volgt vier TLE-periodes waarin ik leerde mijn f*cks beter te verdelen: van ideeën leren onderbouwen, naar projecten 100% afmaken, naar de techniek achter mijn code snappen, naar proactief communiceren en verantwoordelijkheden vooraf verdelen in plaats van alles zelf dragen. De twee projecten van het afgelopen halfjaar, SonarPoppy (TLE 3) en Impakt (TLE 4), laten die groei het duidelijkst zien."
   },
   "tle1": {
-    "title": "TLE 1",
+    "title": "Mental Health App",
     "intro": "Tijdens de eerste periode heb ik gewerkt aan een mental health app waarmee gebruikers meer inzicht krijgen in hun mentale gezondheid aan de hand van statistieken en een AI-gegenereerde diary input.",
     "timeline": [
       {
@@ -64,7 +64,7 @@
     }
   },
   "tle2": {
-    "title": "TLE 2",
+    "title": "Natuurmoment",
     "intro": "In de tweede periode heb ik gewerkt aan Natuurmoment: een webapplicatie die 13-jarigen op een speelse manier de natuur in trekt met een foto-bingo en route-vragen. Hier laat ik zien hoe ik ben gegroeid.",
     "timeline": [
       {
@@ -103,7 +103,7 @@
     }
   },
   "tle3": {
-    "title": "TLE 3: SonarPoppy",
+    "title": "SonarPoppy",
     "intro": "Ethisch AI-aanbevelingssysteem als REST API (Express 5 + MongoDB), gebouwd met een team van vier in twee subteams (front-end en back-end). Martijn en ik waren de AI leads van het back-end-team. Ik heb het aanbevelingsalgoritme grotendeels uitgedacht en gebouwd: per track wordt een score berekend op basis van hoe goed die past bij het smaakprofiel, dat voor de user inzichtelijk en aanpasbaar is.",
     "timeline": [
       {
@@ -191,7 +191,7 @@
     ]
   },
   "tle4": {
-    "title": "TLE 4: Impakt",
+    "title": "Impakt",
     "intro": "In TLE 4 testte ik mijn leerdoel echt. Het team wilde dat ik projectlead werd, maar mijn doel was juist het omgekeerde: verantwoordelijkheden verdelen. Naarmate iedereen in zijn rol groeide, hoefde ik alleen nog te bewaken dat mensen hun taken oppakten. Mijn trots dit semester is niet één feature, maar een team dat zelfstandiger werd. Manson in de praktijk: f*cks niet meer uitgeven aan controle, maar aan de groei van anderen. De app draait inmiddels volwaardig: alle endpoints zijn gekoppeld en we hebben hem gepitcht bij een bedrijf.",
     "timeline": [
       {
@@ -246,7 +246,7 @@
     }
   },
   "toekomst": {
-    "title": "Toekomst",
+    "title": "Vooruitblik",
     "intro": "De rode draad blijft: f*cks verdelen over wat er echt toe doet. Richting mijn stage betekent dat doorbouwen op proactief communiceren, en mijn fullstack-blik in front-end en back-end verder verzilveren, zodat ik features kan bedenken én end-to-end kan bouwen.",
     "reflections": [
       {
