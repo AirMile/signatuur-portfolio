@@ -15,7 +15,7 @@
     "eyebrow": "Creatief Technoloog in opleiding",
     "meta": "Miles Zeilstra · Vier TLE-periodes · 2025-2026",
     "title": "Mijn Groei Portfolio",
-    "body": "Ik ben Miles, Creatief Technoloog in opleiding. Dit portfolio volgt vier TLE-periodes waarin ik leerde mijn f*cks beter te verdelen: van ideeën leren onderbouwen, naar projecten 100% afmaken, naar de techniek achter mijn code snappen, naar proactief communiceren en verantwoordelijkheden vooraf verdelen in plaats van alles zelf dragen. De twee projecten van het afgelopen halfjaar, SonarPoppy (TLE 3) en Impakt (TLE 4), laten die groei het duidelijkst zien."
+    "body": "Ik ben Miles, Creatief Technoloog in opleiding. Dit portfolio volgt vier TLE-periodes waarin ik leerde mijn f*cks beter te verdelen: van ideeën leren onderbouwen, naar projecten 100% afmaken, naar de techniek achter mijn code snappen, naar proactief communiceren en verantwoordelijkheden vooraf verdelen in plaats van alles zelf dragen."
   },
   "tle1": {
     "title": "Novara Health",
@@ -192,7 +192,7 @@
   },
   "tle4": {
     "title": "Impakt",
-    "intro": "In TLE 4 testte ik mijn leerdoel echt. Het team wilde dat ik projectlead werd, maar mijn doel was juist het omgekeerde: verantwoordelijkheden verdelen. Naarmate iedereen in zijn rol groeide, hoefde ik alleen nog te bewaken dat mensen hun taken oppakten. Mijn trots dit semester is niet één feature, maar een team dat zelfstandiger werd. Manson in de praktijk: f*cks niet meer uitgeven aan controle, maar aan de groei van anderen. De app draait inmiddels volwaardig: alle endpoints zijn gekoppeld en we hebben hem gepitcht bij een bedrijf.",
+    "intro": "In TLE 4 testte ik mijn leerdoel echt. Het team wilde dat ik projectlead werd, maar mijn doel was juist het omgekeerde: verantwoordelijkheden verdelen. Naarmate iedereen in zijn rol groeide, hoefde ik alleen nog op te letten dat teamleden hun verantwoording oppakten. Mijn trots dit semester is niet één feature, maar een team dat zelfstandiger werd. Manson in de praktijk: f*cks niet meer uitgeven aan controle, maar aan de groei van anderen. De app draait inmiddels volwaardig: alle endpoints zijn gekoppeld en we hebben hem gepitcht bij een bedrijf.",
     "timeline": [
       {
         "image": "/images/tle4-1.webp",
@@ -225,7 +225,7 @@
         {
           "type": "smart",
           "title": "Actiepunt 1 · Proactief communiceren over voortgang",
-          "description": "Mijn SMART-actiepunt uit TLE 3: in elke standup en wrap-up in 2-3 zinnen benoemen wat ik heb gedaan, waar ik tegenaan loop en wat mijn volgende stap is, en halverwege checken of het werkt. In TLE 4 deed ik dit door na elke standup in Miro te zetten wat ik die dag ging doen. Resultaat: na het splitsen van frontend en backend wist het team beter waar ik stond. In de eindretro kreeg ik wel nog steeds de tip om tussendoor meer te laten weten waar ik mee bezig ben, want ik ben vaak al drie stappen verder als ik iets laat zien. Dit blijft dus mijn groeipunt."
+          "description": "Mijn SMART-actiepunt uit TLE 3: in elke standup en wrap-up in 2-3 zinnen benoemen wat ik heb gedaan, waar ik tegenaan loop en wat mijn volgende stap is, en halverwege checken of het werkt. In TLE 4 deed ik dit door na standups in Miro te zetten wat ik die dag ging doen. Resultaat: na het splitsen van frontend en backend wist het team beter waar ik stond. In de eindretro kreeg ik wel nog steeds de tip om tussendoor meer te laten weten waar ik mee bezig ben, want ik ben vaak al drie stappen verder als ik iets laat zien. Dit blijft dus mijn groeipunt."
         },
         {
           "type": "smart",
@@ -257,7 +257,7 @@
         ]
       },
       {
-        "label": "Nachtkastboek · TLE 1/2",
+        "label": "Nachtkastboek · TLE 2",
         "title": "Hooked: How to Build Habit-Forming Products",
         "body": [
           "Wat me het meest bijbleef is het omgekeerde van het boek: herkennen wat <em>slecht</em> design is. Ik pas dat toe door user experiences te streamlinen: zo min mogelijk pagina's, buttons op logische plekken, en de user path volgen om frustratie te voorkomen."
@@ -271,7 +271,7 @@
       },
       {
         "phase": "Lange termijn",
-        "text": "Fullstack developer worden. Na het meemaken van beide kanten, back-end in TLE 3 en front-end in TLE 4, wil ik die fullstack-blik verder uitbouwen. Met mijn TLE 4 startup-ervaring en stage bij Lely ontdek ik welke omgeving het best bij me past."
+        "text": "Fullstack developer worden. Na het meemaken van beide kanten, back-end in TLE 3 en front-end in TLE 4, wil ik die fullstack-blik verder uitbouwen."
       }
     ]
   }
